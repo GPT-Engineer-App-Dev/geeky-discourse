@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, VStack, Heading, Text, Input, Button, Divider, HStack, Avatar } from "@chakra-ui/react";
 import { FaSearch, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ForumPost = ({ title, author, content }) => (
   <Box borderWidth="1px" borderRadius="lg" p={4} mb={4}>
@@ -24,7 +25,10 @@ const Index = () => {
           <Button leftIcon={<FaSearch />}>Search</Button>
         </HStack>
         
-        <Button leftIcon={<FaPlus />} colorScheme="blue">New Topic</Button>
+        <HStack spacing={4}>
+          <Button leftIcon={<FaPlus />} colorScheme="blue">New Topic</Button>
+          <Button as={Link} to="/register" colorScheme="green">Register</Button>
+        </HStack>
         
         <Divider />
         
